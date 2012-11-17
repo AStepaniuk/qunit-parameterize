@@ -5,7 +5,10 @@ This addon provides ability to specify the list of test cases outside of the tes
 When list of test cases is provided then separated test is added to run per each test case.
 Test case is passed to test function as parameter.
 
-It helps to make tests more DRY.
+Benefits are:
+ * Test data and test methods are not mixed
+ * Tests are data driven
+ * Tests are more DRY
 
 ##Usage
 
