@@ -1,3 +1,8 @@
+/*
+ * Parameterize v 0.1
+ * A QUnit Addon For Running Parameterized Tests
+ * https://github.com/AStepaniuk/qunit-parameterize 
+ */
 QUnit.extend(QUnit, {
 	cases : function(testCases) {
 		var createTest = function(methodName, title, expected, callback, parameters) {
