@@ -91,6 +91,27 @@ QUnit.extend(QUnit, {
 				return this;
 			},
 
+			combinatorial : function(mixData) {
+				var current = (currentCases && currentCases.length > 0) ? currentCases : [ null ];
+				mixData = (mixData && mixData.length > 0) ? mixData : [ null ];
+				var currentLength = current.length;
+				var mixDataLength = mixData.length;
+
+				var newCases = [];
+				for (var i = 0; i < currentLength; ++i) {
+					for(var j = 0; j < mixDataLength; ++j) {
+						var currentCaseI = current[i];
+						var dataJ = mixData[j];
+						var newCase = mix(currentCaseI, dataJ);
+
+						if (newCase) newCases.push(newCase);
+					}
+				}
+				currentCases = newCases;
+
+				return this;
+			},
+
 			test : function(title, expected, callback) {
 				iterateTestCases("test", title, expected, callback);
 			},
