@@ -9,7 +9,7 @@ QUnit.extend(QUnit, {
 			QUnit[methodName](
 				title,
 				expected,
-				function(assert) { return callback(parameters, assert); }
+				function(assert) { return callback.call(this, parameters, assert); }
 			);
 		};
 
