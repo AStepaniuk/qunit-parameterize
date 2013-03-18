@@ -164,3 +164,19 @@ parameterizeFixture.registerModule(
 		}
 	}
 );
+
+parameterizeFixture.registerModule(
+    QUnit,
+    "Test case runs chained tests",
+    parameterizeTestData.testCasesWithTitles,
+    function(qunit, assert, testName, testCases) {
+        var record = recordCalls(qunit, testName, function() {
+            qunit
+                .cases(testCases)
+                [testName]('test 1', function(testCase){})
+                [testName]('test 2', function(testCase){});
+        });
+
+        equal(record.calledTimes(), testCases.length * 2);
+    }
+);

@@ -36,10 +36,12 @@ QUnit.extend(QUnit, {
 		return {
 			test : function(title, expected, callback) {
 				iterateTestCases("test", title, expected, callback);
+                return this;
 			},
 
 			asyncTest : function(title, expected, callback) {
 				iterateTestCases("asyncTest", title, expected, callback);
+                return this;
 			}
 		}
 	}
