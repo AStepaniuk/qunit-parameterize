@@ -12,9 +12,10 @@ var recordCalls = function(qunit, methodName, action) {
 	finally {
 		qunit[methodName] = realMethod;
 	}
-	
+
 	return {
 		getArguments : function() { return callsArguments; },
 		neverCalled : function() { return callsArguments.length == 0; },
+		calledTimes: function () { return callsArguments.length; }
 	};
 };

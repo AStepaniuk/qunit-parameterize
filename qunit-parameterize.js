@@ -1,7 +1,8 @@
 /*
- * Parameterize v 0.1
+ * Parameterize v 0.2
  * A QUnit Addon For Running Parameterized Tests
- * https://github.com/AStepaniuk/qunit-parameterize 
+ * https://github.com/AStepaniuk/qunit-parameterize
+ * Released under the MIT license. 
  */
 QUnit.extend(QUnit, {
 	cases : function(testCases) {
@@ -11,7 +12,7 @@ QUnit.extend(QUnit, {
 			QUnit[methodName](
 				title,
 				expected,
-				function(assert) { return callback(parameters, assert); }
+				function(assert) { return callback.call(this, parameters, assert); }
 			);
 		};
 
@@ -114,10 +115,12 @@ QUnit.extend(QUnit, {
 
 			test : function(title, expected, callback) {
 				iterateTestCases("test", title, expected, callback);
+				return this;
 			},
 
 			asyncTest : function(title, expected, callback) {
 				iterateTestCases("asyncTest", title, expected, callback);
+				return this;
 			}
 		}
 	}
