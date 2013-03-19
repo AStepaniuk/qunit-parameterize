@@ -108,3 +108,21 @@ QUnit.test("Sum test[5+0]", function() {
 	equal(actualSum, 5);
 });
 ```
+
+## Chaining
+
+For running several tests over the same test data, use the following:
+
+```js
+QUnit
+    .cases([
+        '.container',
+        'body .container'
+    ])
+    .test("Should get a single jquery element", function(param) {
+        equal($(param).length, 1);
+    })
+    .test("Should have class of jquery element", function(param) {
+        ok($(param).hasClass('container'));
+    });
+```
