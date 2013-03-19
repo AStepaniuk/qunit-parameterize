@@ -1,7 +1,8 @@
 /*
- * Parameterize v 0.1
+ * Parameterize v 0.2
  * A QUnit Addon For Running Parameterized Tests
- * https://github.com/AStepaniuk/qunit-parameterize 
+ * https://github.com/AStepaniuk/qunit-parameterize
+ * Released under the MIT license. 
  */
 QUnit.extend(QUnit, {
 	cases : function(testCases) {
