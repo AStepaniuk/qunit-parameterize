@@ -58,7 +58,7 @@ QUnit.test("Sum test", function() {
 });
 ```
 
-## Assert parameter
+##Assert parameter
 
 Parameter assert is provided as the second parameter to the test function.
 
@@ -75,7 +75,7 @@ QUnit
 	});
 ```
 
-## Title suffix
+##Title suffix
 
 When special parameter 'title' is specifies in test case
 then test case title is added as suffix to the test title.
@@ -109,20 +109,23 @@ QUnit.test("Sum test[5+0]", function() {
 });
 ```
 
-## Chaining
+##Chaining
+(available since v0.2)
 
-For running several tests over the same test data, use the following:
+For running several tests over the same test data.
+
+####Example
 
 ```js
 QUnit
-    .cases([
-        '.container',
-        'body .container'
-    ])
-    .test("Should get a single jquery element", function(param) {
-        equal($(param).length, 1);
-    })
-    .test("Should have class of jquery element", function(param) {
-        ok($(param).hasClass('container'));
-    });
+	.cases([
+		'.container',
+		'body .container'
+	])
+	.test("Should get a single jquery element", function(param) {
+		equal($(param).length, 1);
+	})
+	.test("Should have class of jquery element", function(param) {
+		ok($(param).hasClass('container'));
+	});
 ```
