@@ -1,7 +1,7 @@
-Parameterize - A QUnit Addon For Running Parameterized Tests
+Parameterize - A QUnit plugin For Running Parameterized Tests
 ============================================================
 
-This addon provides ability to specify the list of test cases outside of the test function.
+This plugin provides ability to specify the list of test cases outside of the test function.
 When list of test cases is provided then separated test is added to run per each test case.
 Test case is passed to test function as parameter.
 
