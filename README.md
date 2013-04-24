@@ -129,3 +129,208 @@ QUnit
 		ok($(param).hasClass('container'));
 	});
 ```
+
+##Test Cases Generation
+(available since v0.3)
+
+Test cases can be generated based on provided test data.
+
+###Sequential
+
+Generates the set of test cases based on provided pairs of test data.
+
+####Example
+
+The following code
+
+```js
+QUnit
+	.cases([
+		{ a : 1 },
+		{ a : 2 },
+		{ a : null }
+	])
+	.sequential([
+		{ b : "one" },
+		{ b : "two" }
+	])
+```
+
+produces test cases:
+
+```js
+[
+	{ a : 1, b : "one" },
+	{ a : 2, b : "two" },
+	{ a : null }
+]
+```
+
+The total count of test cases is the maximum count of cases from 'cases()' and 'sequential()'.
+
+When some test case should be skipped then 'null' or 'undefined' can be passed at its place:
+
+####Example
+
+The following code
+
+```js
+QUnit
+	.cases([
+		{ a : 1 },
+		{ a : 2 },
+		{ a : null }
+	])
+	.sequential([
+		{ b : "one" },
+		null,
+		{ b : "null" }
+	])
+```
+
+produces test cases:
+
+```js
+[
+	{ a : 1, b : "one" },
+	{ a : 2 },
+	{ a : null, b : "null" }
+]
+```
+
+###Combinatorial
+
+Generates the test cases combinations based on provided test data.
+
+####Example
+
+The following code
+
+```js
+QUnit
+	.cases([
+		{ a : 1 },
+		{ a : 2 }
+	])
+	.combinatorial([
+		{ b : "X" },
+		{ b : "Y" }
+	])
+```
+
+produces test cases:
+
+```js
+[
+	{ a : 1, b : "X" },
+	{ a : 1, b : "Y" },
+	{ a : 2, b : "X" },
+	{ a : 2, b : "Y" }
+]
+```
+
+When 'null' or 'undefined' is passed as test data then original test case is not changed:
+
+####Example
+
+The following code
+
+```js
+QUnit
+	.cases([
+		{ a : 1 },
+		{ a : 2 }
+	])
+	.combinatorial([
+		{ b : "X" },
+		null
+	])
+```
+
+produces test cases:
+
+```js
+[
+	{ a : 1, b : "X" },
+	{ a : 1 },
+	{ a : 2, b : "X" },
+	{ a : 2 }
+]
+```
+
+###Parameter names conflict resolution
+
+If parameter with the same name is presented in both 'cases()' and in 'sequential()/combinatorial()'
+then value from 'cases()' is prefered to generate resulting test case:
+
+####Example
+
+The following code
+
+```js
+QUnit
+	.cases([
+		{ a : 1 },
+		{ a : 2 }
+	])
+	.sequential([
+		{ a : 3 },
+		{ a : 4 }
+	])
+```
+
+produces test cases:
+
+```js
+[
+	{ a : 1 },
+	{ a : 2 }
+]
+```
+
+###Title Concatenation
+
+If parameter 'title' is presented in both 'cases()' and in 'sequential()/combinatorial()'
+then resulting 'title' value is a concatenation of both original values:
+
+####Example
+
+The following code
+
+```js
+QUnit
+	.cases([
+		{ title : "case1", a : 1 },
+		{ title : "case2", a : 2 }
+	])
+	.combinatorial([
+		{ title : " mix1", b : "X" },
+		{ title : " mix2", b : "Y" }
+	])
+```
+
+produces test cases:
+
+```js
+[
+	{ title : "case1 mix1", a : 1, b : "X" },
+	{ title : "case1 mix2", a : 1, b : "Y" },
+	{ title : "case2 mix1", a : 2, b : "X" },
+	{ title : "case2 mix2", a : 2, b : "Y" }
+]
+```
+
+###Chaining Generation
+
+It is possible to apply multiple 'sequential()/combinatorial()' calls to the same test cases set.
+
+####Example
+
+```js
+QUnit
+	.cases([...])
+	.combinatorial([...])
+	.sequential([...])
+	.combinatorial([...])
+	.sequential([...])
+```
