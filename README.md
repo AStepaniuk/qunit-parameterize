@@ -154,16 +154,19 @@ QUnit
 		{ b : "one" },
 		{ b : "two" }
 	])
+	.test(...);
 ```
 
-produces test cases:
+Is equivalent to:
 
 ```js
-[
-	{ a : 1, b : "one" },
-	{ a : 2, b : "two" },
-	{ a : null }
-]
+QUnit
+	.cases([
+		{ a : 1, b : "one" },
+		{ a : 2, b : "two" },
+		{ a : null }
+	])
+	.test(...);
 ```
 
 The total count of test cases is the maximum count of cases from 'cases()' and 'sequential()'.
