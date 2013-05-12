@@ -10,6 +10,11 @@ Benefits are:
  * Tests are data driven
  * Tests are more DRY
 
+##Download
+
+ * [qunit-parameterize.js v0.3](https://raw.github.com/AStepaniuk/qunit-parameterize/v0.3/qunit-parameterize.js)
+ * [via npm](https://npmjs.org/package/qunit-parameterize) : $ npm install qunit-parameterize
+
 ##Usage
 
 ```js
