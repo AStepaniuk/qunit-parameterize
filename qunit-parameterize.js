@@ -1,5 +1,5 @@
 /*
- * Parameterize v 0.3
+ * Parameterize v 0.4
  * A QUnit Addon For Running Parameterized Tests
  * https://github.com/AStepaniuk/qunit-parameterize
  * Released under the MIT license. 
