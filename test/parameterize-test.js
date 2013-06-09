@@ -1,18 +1,5 @@
 parameterizeFixture.registerModule(
 	QUnit,
-	"No test cases",
-	parameterizeTestData.testCasesNotProvided,
-	function(qunit, assert, testName, testCases) {
-		var record = recordCalls(qunit, testName, function() {
-			qunit.cases(testCases)[testName]("", function(){});
-		});
-
-		assert.ok(record.neverCalled());
-	}
-);
-
-parameterizeFixture.registerModule(
-	QUnit,
 	"Registering tests",
 	parameterizeTestData.standardTestCases,
 	function(qunit, assert, testName, testCases) {

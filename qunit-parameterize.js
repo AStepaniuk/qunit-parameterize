@@ -17,7 +17,13 @@ QUnit.extend(QUnit, {
 		};
 
 		var iterateTestCases = function(methodName, title, expected, callback) {
-			if (!currentCases) return;
+			if (!currentCases || currentCases.length == 0) {
+				// setup test which will always fail
+				QUnit.test(title, function(assert) {
+					assert.ok(false, "No test cases are provided");
+				});
+				return;
+			}
 
 			if (!callback) {
 				callback = expected;

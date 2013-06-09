@@ -75,18 +75,6 @@
 			expectedCases : [{ a : 1 }]
 		},
 		{
-			title : "undefined x undefined",
-			originalCases : undefined,
-			mixData : undefined,
-			expectedCases : []
-		},
-		{
-			title : "null x null",
-			originalCases : null,
-			mixData : null,
-			expectedCases : []
-		},
-		{
 			title : "[{}, undefined] x undefined",
 			originalCases : [{ a : 1 }, undefined],
 			mixData : undefined,
