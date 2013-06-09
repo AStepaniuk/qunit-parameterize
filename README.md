@@ -12,7 +12,7 @@ Benefits are:
 
 ##Download
 
- * [qunit-parameterize.js v0.3](https://raw.github.com/AStepaniuk/qunit-parameterize/v0.3/qunit-parameterize.js)
+ * [qunit-parameterize.js v0.4](https://raw.github.com/AStepaniuk/qunit-parameterize/v0.4/qunit-parameterize.js)
  * [via npm](https://npmjs.org/package/qunit-parameterize) : $ npm install qunit-parameterize
 
 ##Usage
