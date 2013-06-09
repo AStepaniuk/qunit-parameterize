@@ -113,7 +113,7 @@
 	];
 
 	var registerTest = function(testCase) {
-		QUnit.test(testCase.title, function(){
+		QUnit.test(testCase.title, function(assert){
 			var actualTestCases = [];
 
 			var record = recordCalls(QUnit, "test", function() {
@@ -141,7 +141,7 @@
 	}
 
 
-	QUnit.test("Don not change original test cases objects", function(){
+	QUnit.test("Don not change original test cases objects", function(assert){
 		var originalCases = [{ a : 1 }, { a : 2 }];
 		var addData = [{ b : "v1" }, { b : "v2" }];
 		var actualTestCases = [];
@@ -157,7 +157,7 @@
 	});
 
 
-	QUnit.test("Fluent calls support", function(){
+	QUnit.test("Fluent calls support", function(assert){
 		var originalCases = [{ a : 1 }, { a : 2 }];
 		var addData1 = [{ b : "v1" }, { b : "v2" }];
 		var addData2 = [{ c : ["arr1"] }, { c : ["arr2"] }];
