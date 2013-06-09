@@ -63,6 +63,11 @@ QUnit.test("Sum test", function() {
 });
 ```
 
+## Test cases validation
+
+Since v0.4 test fails when empty test cases set (or null or undefined) is provided.
+See [Issue#4](https://github.com/AStepaniuk/qunit-parameterize/issues/4) for details.
+
 ##Assert parameter
 
 Parameter assert is provided as the second parameter to the test function.
