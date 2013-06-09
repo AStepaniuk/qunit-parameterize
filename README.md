@@ -6,6 +6,7 @@ When list of test cases is provided then separated test is added to run per each
 Test case is passed to test function as parameter.
 
 Benefits are:
+
  * Test data and test methods are not mixed  
  * Tests are data driven  
  * Tests are more DRY
