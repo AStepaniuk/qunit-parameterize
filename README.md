@@ -14,7 +14,8 @@ Benefits are:
 ##Download
 
  * [qunit-parameterize.js v0.4](https://raw.github.com/AStepaniuk/qunit-parameterize/v0.4/qunit-parameterize.js)
- * [via npm](https://npmjs.org/package/qunit-parameterize) : $ npm install qunit-parameterize
+ * [npm](https://npmjs.org/package/qunit-parameterize) : $ npm install qunit-parameterize
+ * [bower](http://bower.io/) : $ bower install qunit-parameterize
 
 ##Usage
 
