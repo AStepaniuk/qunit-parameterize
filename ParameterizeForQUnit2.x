@@ -22,7 +22,7 @@ QUnit.extend(QUnit, {
             },
             createTest = function(methodName, title, expected, callback, parameters) {
 
-                QUnit[methodName](title + ", test params: " + JSON.stringify(parameters), function(assert) {
+                QUnit[methodName](title, function(assert) {
                     return callback.call(this, parameters, assert);
                 });
             },
