@@ -39,7 +39,7 @@ QUnit.extend(QUnit, {
 
 				}
 
-                if (parameters.skip === true) {
+                if (parameters._skip === true) {
                     methodName = 'skip';
                 }
 
