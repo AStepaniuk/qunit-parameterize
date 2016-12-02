@@ -2,7 +2,7 @@
  * Parameterize v 0.4
  * A QUnit Addon For Running Parameterized Tests
  * https://github.com/AStepaniuk/qunit-parameterize
- * Released under the MIT license. 
+ * Released under the MIT license.
  */
 QUnit.extend(QUnit, {
 	cases : function(testCases) {
@@ -35,8 +35,13 @@ QUnit.extend(QUnit, {
 
 				var testCaseTitle = title;
 				if (parameters.title) {
-					testCaseTitle += "[" + parameters.title + "]"; 
+					testCaseTitle += "[" + parameters.title + "]";
+
 				}
+
+                if (parameters._skip === true) {
+                    methodName = 'skip';
+                }
 
 				createTest(methodName, testCaseTitle, expected, callback, parameters);
 			}
@@ -49,7 +54,7 @@ QUnit.extend(QUnit, {
 		var getItem = function(arr, idx) {
 			return arr ? arr[idx] : undefined;
 		}
-		
+
 		var mix = function(testCase, mixData) {
 			if (testCase && mixData) {
 				var result = clone(testCase);
