@@ -53,6 +53,10 @@ QUnit.extend(QUnit, {
 						testCaseTitle += "[" + parameters.title + "]";
 					}
 
+					if (parameters._skip === true) {
+						methodName = 'skip';
+					}
+
 					createTest(methodName, testCaseTitle, expected, callback, parameters);
 				}
 			},
