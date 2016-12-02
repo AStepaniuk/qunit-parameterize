@@ -20,14 +20,15 @@ QUnit.extend(QUnit, {
 
 				return result;
 			},
-			createTest = function(methodName, title, expected, callback, parameters) {
+
+			createTest = function(methodName, title, callback, parameters) {
 
 				QUnit[methodName](title, function(assert) {
 					return callback.call(this, parameters, assert);
 				});
 			},
 
-			iterateTestCases = function(methodName, title, expected, callback) {
+			iterateTestCases = function(methodName, title, callback) {
 				var i = 0,
 					parameters = null,
 					testCaseTitle = null;
@@ -38,11 +39,6 @@ QUnit.extend(QUnit, {
 						assert.ok(false, "No test cases are provided");
 					});
 					return;
-				}
-
-				if (!callback) {
-					callback = expected;
-					expected = null;
 				}
 
 				for (i = 0; i < currentCases.length; i += 1) {
@@ -57,7 +53,7 @@ QUnit.extend(QUnit, {
 						methodName = 'skip';
 					}
 
-					createTest(methodName, testCaseTitle, expected, callback, parameters);
+					createTest(methodName, testCaseTitle, callback, parameters);
 				}
 			},
 
@@ -163,8 +159,8 @@ QUnit.extend(QUnit, {
 				return this;
 			},
 
-			test: function(title, expected, callback) {
-				iterateTestCases("test", title, expected, callback);
+			test: function(title, callback) {
+				iterateTestCases("test", title, callback);
 				return this;
 			},
 
