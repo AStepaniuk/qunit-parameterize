@@ -14,6 +14,10 @@ QUnit.cases([
         title: '_skip is true',
         _skip: true,
         expected: true
+    },
+    {
+        title: '_skip default is false, call after true value',
+        expected: false
     }
 ]).test('_skip default value',
 function(params, assert)
