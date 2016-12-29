@@ -121,6 +121,37 @@ QUnit.test("Sum test[5+0]", function() {
 });
 ```
 
+
+##Skipping test case
+(available since v0.5)
+
+Sometimes you need skip specific test case. You can use `_skip` boolean (false by default) parameter.
+
+####Example
+
+```js
+QUnit
+	.cases([
+		{ title: "skip me", _skip: true, a: 2, b: 2, expectedSum: 4},
+		{ title : "5+0", a : 5, b : 0, expectedSum : 5 }
+	])
+	.test("Sum test", function(params) {
+		var actualSum = sum(params.a, params.b);
+		equal(actualSum, params.expectedSum);
+	});
+```
+
+First test case will be skipped so equivalent for above code is:
+
+```js
+QUnit.skip("Sum test[skip me]");
+QUnit.test("Sum test[5+0]", function() {
+	var actualSum = sum(5, 0);
+	equal(actualSum, 5);
+});
+```
+
+
 ##Chaining
 (available since v0.2)
 
