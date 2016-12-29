@@ -31,19 +31,19 @@ QUnit.extend(QUnit, {
 			}
 
 			for (var i = 0; i < currentCases.length; ++i) {
+				var methodNameString = methodName;
 				var parameters = currentCases[i];
 
 				var testCaseTitle = title;
 				if (parameters.title) {
 					testCaseTitle += "[" + parameters.title + "]";
-
 				}
 
                 if (parameters._skip === true) {
-                    methodName = 'skip';
+                    methodNameString = 'skip';
                 }
 
-				createTest(methodName, testCaseTitle, expected, callback, parameters);
+				createTest(methodNameString, testCaseTitle, expected, callback, parameters);
 			}
 		}
 
