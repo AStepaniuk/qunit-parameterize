@@ -1,25 +1,3 @@
-var skipCaseArray = [
-   {
-       title: 'skip default value',
-       cases: [
-           {
-               title: 'skip default is false',
-               expected: false
-           },
-           {
-               title: 'skip is false',
-               skip: false,
-               expected: false
-           },
-           {
-               title: 'skip is true',
-               skip: true,
-               expected: true
-           },
-       ]
-   }
-];
-
 QUnit.module('Skip case');
 QUnit.skip('Check if QUnit.skip() function is available.');
 QUnit.cases([
@@ -36,6 +14,10 @@ QUnit.cases([
         title: '_skip is true',
         _skip: true,
         expected: true
+    },
+    {
+        title: '_skip default is false, call after true value',
+        expected: false
     }
 ]).test('_skip default value',
 function(params, assert)
