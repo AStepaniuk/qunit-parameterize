@@ -11,13 +11,13 @@ Benefits are:
  * Tests are data driven  
  * Tests are more DRY
 
-##Download
+## Download
 
  * [qunit-parameterize.js v0.4](https://raw.github.com/AStepaniuk/qunit-parameterize/v0.4/qunit-parameterize.js)
  * [npm](https://npmjs.org/package/qunit-parameterize) : $ npm install qunit-parameterize
  * [bower](http://bower.io/) : $ bower install qunit-parameterize
 
-##Usage
+## Usage
 
 ```js
 QUnit
@@ -25,7 +25,7 @@ QUnit
 	.test(title, [expect], callback);
 ```
 
-####Example
+#### Example
 
 Given test function is:
 
@@ -70,11 +70,11 @@ QUnit.test("Sum test", function() {
 Since v0.4 test fails when empty test cases set (or null or undefined) is provided.
 See [Issue#4](https://github.com/AStepaniuk/qunit-parameterize/issues/4) for details.
 
-##Assert parameter
+## Assert parameter
 
 Parameter assert is provided as the second parameter to the test function.
 
-####Example
+#### Example
 
 ```js
 QUnit
@@ -87,12 +87,12 @@ QUnit
 	});
 ```
 
-##Title suffix
+## Title suffix
 
 When special parameter 'title' is specifies in test case
 then test case title is added as suffix to the test title.
 
-####Example
+#### Example
 
 The following code:
 
@@ -122,12 +122,12 @@ QUnit.test("Sum test[5+0]", function() {
 ```
 
 
-##Skipping test case
+## Skipping test case
 (available since v0.5)
 
 Sometimes you need skip specific test case. You can use `_skip` boolean (false by default) parameter.
 
-####Example
+#### Example
 
 ```js
 QUnit
@@ -152,12 +152,12 @@ QUnit.test("Sum test[5+0]", function() {
 ```
 
 
-##Chaining
+## Chaining
 (available since v0.2)
 
 For running several tests over the same test data.
 
-####Example
+#### Example
 
 ```js
 QUnit
@@ -173,16 +173,16 @@ QUnit
 	});
 ```
 
-##Test Cases Generation
+## Test Cases Generation
 (available since v0.3)
 
 Test cases can be generated based on provided test data.
 
-###Sequential
+### Sequential
 
 Generates the set of test cases based on provided pairs of test data.
 
-####Example
+#### Example
 
 The following code
 
@@ -216,7 +216,7 @@ The total count of test cases is the maximum count of cases from 'cases()' and '
 
 When some test case should be skipped then 'null' or 'undefined' can be passed at its place:
 
-####Example
+#### Example
 
 The following code
 
@@ -244,11 +244,11 @@ produces test cases:
 ]
 ```
 
-###Combinatorial
+### Combinatorial
 
 Generates the test cases combinations based on provided test data.
 
-####Example
+#### Example
 
 The following code
 
@@ -277,7 +277,7 @@ produces test cases:
 
 When 'null' or 'undefined' is passed as test data then original test case is not changed:
 
-####Example
+#### Example
 
 The following code
 
@@ -304,12 +304,12 @@ produces test cases:
 ]
 ```
 
-###Parameter names conflict resolution
+### Parameter names conflict resolution
 
 If parameter with the same name is presented in both 'cases()' and in 'sequential()/combinatorial()'
 then value from 'cases()' is prefered to generate resulting test case:
 
-####Example
+#### Example
 
 The following code
 
@@ -334,12 +334,12 @@ produces test cases:
 ]
 ```
 
-###Title Concatenation
+### Title Concatenation
 
 If parameter 'title' is presented in both 'cases()' and in 'sequential()/combinatorial()'
 then resulting 'title' value is a concatenation of both original values:
 
-####Example
+#### Example
 
 The following code
 
@@ -366,11 +366,11 @@ produces test cases:
 ]
 ```
 
-###Chaining Generation
+### Chaining Generation
 
 It is possible to apply multiple 'sequential()/combinatorial()' calls to the same test cases set.
 
-####Example
+#### Example
 
 ```js
 QUnit
