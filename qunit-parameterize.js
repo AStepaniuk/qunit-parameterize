@@ -36,7 +36,7 @@ QUnit.extend(QUnit, {
                 if (!currentCases || currentCases.length === 0) {
                     // setup test which will always fail
                     QUnit.test(title, function(assert) {
-                        assert.ok(false, "No test cases are provided");
+                        assert.ok(false, 'No test cases are provided');
                     });
                     return;
                 }
@@ -46,7 +46,7 @@ QUnit.extend(QUnit, {
 
                     testCaseTitle = title;
                     if (parameters.title) {
-                        testCaseTitle += "[" + parameters.title + "]";
+                        testCaseTitle += '[' + parameters.title + ']';
                     }
 
                     if (parameters._skip === true) {
@@ -74,12 +74,12 @@ QUnit.extend(QUnit, {
 
                     for (p in mixData) {
                         if (mixData.hasOwnProperty(p)) {
-                            if (p !== "title") {
+                            if (p !== 'title') {
                                 if (!(result.hasOwnProperty(p))) {
                                     result[p] = mixData[p];
                                 }
                             } else {
-                                result[p] = [result[p], mixData[p]].join("");
+                                result[p] = [result[p], mixData[p]].join('');
                             }
                         }
                     }
@@ -160,7 +160,7 @@ QUnit.extend(QUnit, {
             },
 
             test: function(title, callback) {
-                iterateTestCases("test", title, callback);
+                iterateTestCases('test', title, callback);
                 return this;
             },
 

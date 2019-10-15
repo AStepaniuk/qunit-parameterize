@@ -10,18 +10,22 @@
     ],
     "bugs": "https://github.com/AStepaniuk/qunit-parameterize/issues",
     "license": "MIT",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/AStepaniuk/qunit-parameterize"
+    },
     "files": [
         "qunit-parameterize.js"
     ],
     "main": "qunit-parameterize.js",
-    "repository": {
-        "type": "git",
-        "url": "https://github.com/AStepaniuk/qunit-parameterize"
+    "scripts" : {
+        "lint" : "eslint qunit-parameterize.js"
     },
     "peerDependencies": {
         "qunit": "^2.0.0"
     },
     "devDependencies": {
+        "eslint": "^6.5.1",
         "qunit": "^2.9.3"
     }
 }
