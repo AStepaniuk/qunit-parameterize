@@ -2,7 +2,7 @@
 	"name" : "qunit-parameterize",
 	"version" : "v0.4.0",
 	"description" : "Parameterize - A QUnit plugin For Running Parameterized Tests",
-	"keywords" : [ "qunit", "unit testing", "parapeterized test", "test case" ],
+	"keywords" : [ "qunit", "qunit-plugin", "unit testing", "parapeterized test", "test case" ],
 	"bugs" : "https://github.com/AStepaniuk/qunit-parameterize/issues",
 	"license" : "MIT",
 	"files" : [ "qunit-parameterize.js" ],
