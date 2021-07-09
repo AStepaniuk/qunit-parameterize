@@ -5,7 +5,10 @@
 	"keywords" : [ "qunit", "unit testing", "parapeterized test", "test case" ],
 	"bugs" : "https://github.com/AStepaniuk/qunit-parameterize/issues",
 	"license" : "MIT",
-	"files" : [ "qunit-parameterize.js" ],
+	"files" : [
+		"qunit-parameterize.js",
+		"qunit2-parameterize.js"
+	],
 	"repository" : {
 		"type" : "git",
 		"url" : "https://github.com/AStepaniuk/qunit-parameterize"
